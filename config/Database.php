@@ -1,19 +1,26 @@
 <?php
 class Connection{
-private $servername;
-private $username;
-private $password;
-private $dbname;
 public function connect(){
-    $this->servername="localhost";
-    $this->username="root";
-    $this->password="";
-    $this->dbname="Peersync";
-    $conn=new mysqli($this->servername, $this->username, $this->password, $this->dbname);
-    if($conn->connect_error){
-        die("Pas de connextion : ". $conn->connect_error);
-    }
-    return $conn;
+    $servername="localhost";
+    $username="root";
+    $password="";
+    $dbname="Peersync";
+  
+
+      try {
+             $pdo = new PDO(
+                "mysql:host=" . $servername . ";dbname=" . $dbname,
+                $username,
+                $password);
+
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            return $pdo;
+
+        } catch (PDOException $e) {
+            die("DB Connection failed: " . $e->getMessage());
+        }
+   
 }
 }
 ?>

@@ -5,20 +5,28 @@ class User{
     private $name;
     private $password;
     private $role;
-    public function __construct($id, $name, $password, $role){
+    private $email;
+    public function __construct($id, $name, $password, $role, $email){
         $this->id=$id;
         $this->name=$name;
         $this->password=$password;
         $this->role=$role;
+        $this->email=$email;
     }
-     public function getId() {
-        echo "this user id :" . $this->id;
+      public function getName() {
+        return $this->name;
+    }
+      public function getEmail() {
+        return $this->email;
+    }
+    public function getId() {
+        return $this->id;
     }
        public function getPassword(){
-       echo "this le password : ".$this->password;
+       return $this->password;
     }
     public function getRole(){
-        echo "this role of user :". $this->role;
+        return $this->role;
     }
 
 }

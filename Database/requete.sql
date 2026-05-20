@@ -42,3 +42,5 @@ CREATE TABLE help_requests(
     FOREIGN KEY (id_student) REFERENCES users(id),
     FOREIGN KEY (id_skill) REFERENCES skills(id)
 );
+ALTER TABLE users
+ADD email VARCHAR(20);

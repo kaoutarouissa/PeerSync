@@ -1,18 +1,34 @@
 <?php
-require_once __DIR__ . "/../src/Entities/User.php"; 
-require_once __DIR__ . "/../config/database.php";
-?>
+require_once __DIR__ . "/../src/Repositories/UserRepository.php";
+// require_once __DIR__ . "/../config/database.php";
+require_once __DIR__ . "/../config/Database.php";
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+session_start();
+$db = new Connection();
+$conn = $db->connect();
+
+
+$userRepo = new UserRepository($conn);
+
+$email = $_POST['email'];
+$password = $_POST['password'];
+$role = $_POST['role'];
+
+$user = $userRepo->getUserByemail($email);
+// echo $user;
+foreach($user as $key => $value){
+    echo $key . " : " . $value . "<br>";
+} 
+if($user && trim($user['password']) == trim($password) && $user['email'] == $email && trim($user['role']) == trim($role))    
+  {  $_SESSION['user'] = $user['name'];
+
+    // echo "Bienvenue". $user['name'];
+    header('../public/dachboard.php');
+    exit;
     
-Welcome <?php echo $_POST["role"]; ?><br>
-Your email address is: <?php echo $_POST["email"]; ?>
-</body>
-</html> -->
+    
+} else {
+    echo "Email ou mot de passe incorrect";
+    header("../public/index.php");
+}
+?>

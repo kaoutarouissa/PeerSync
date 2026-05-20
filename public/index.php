@@ -2,14 +2,7 @@
 
 // require_once "src/Entities/User.php";
 require_once __DIR__ . "/../src/Entities/User.php"; 
-// $user = new User(1, "Ali", "xxx", "student");
-// // $user->getPassword("xxxxxx");
-// // استعمال getters
-// // echo "ID: " . $user->getId() . "<br>";
-//  echo $user->getRole() . "<br>";
-// echo $user->getPassword();
-
-// ?>
+ ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
