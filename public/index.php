@@ -30,8 +30,8 @@ require_once __DIR__ . "/../src/Entities/User.php";
 
       
       <div>
-        <label class="block text-gray-700">Nom ou Email</label>
-        <input type="text" name="name"
+        <label class="block text-gray-700"> Email</label>
+        <input type="text" name="email"
                class="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                >
       </div>
