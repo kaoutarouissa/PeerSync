@@ -56,3 +56,10 @@ INSERT INTO skills (title) VALUES
 ('Laravel'),
 ('Git'),
 ('React');
+DELETE FROM help_requests
+WHERE status = 'EN_ATTENTE';
+DELETE FROM help_requests
+WHERE status = 'ASSIGNE';
+ALTER TABLE help_requests DROP COLUMN status;
+ALTER TABLE help_requests
+ADD status ENUM('EN_ATTENTE', 'ASSIGNE', 'RESOLUE') DEFAULT 'EN_ATTENTE';
