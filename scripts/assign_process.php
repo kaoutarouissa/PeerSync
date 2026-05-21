@@ -29,6 +29,6 @@ if(isset($_POST['skills'])){
 
         }
     }
-header("Location: ../public/dachboard.php");
+header("Location: ../public/dashboard.php");
 exit;
 }
