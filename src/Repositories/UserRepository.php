@@ -1,5 +1,6 @@
 <?php
-
+// require_once "User.php";
+require_once __DIR__ . "/../Entities/User.php";
 class UserRepository {
     private $conn;
     public function __construct($conn) {    
@@ -10,7 +11,17 @@ class UserRepository {
         $stm=$this->conn->prepare($sql);
         $stm->execute([$email]);
         $usermail=$stm->fetch(PDO::FETCH_OBJ);
-        return $usermail;
+            if(!$usermail){
+            return null;
+        }
+        return new User(
+            $usermail->id,
+    $usermail->name,
+    $usermail->password,
+    $usermail->role,
+    $usermail->email
+
+        );
 
     }
 

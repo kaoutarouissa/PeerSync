@@ -2,6 +2,7 @@
 require_once __DIR__ . "/../src/Repositories/UserRepository.php";
 // require_once __DIR__ . "/../config/database.php";
 require_once __DIR__ . "/../config/Database.php";
+require_once __DIR__ . "/../src/Entities/User.php";
 
 session_start();
 $db = new Connection();
@@ -19,13 +20,14 @@ $user = $userRepo->getUserByemail($email);
 // foreach($user as $key => $value){
 //     echo $key . " : " . $value . "<br>";
 // } 
-if($user && trim($user->password) == trim($password) && $user->email == $email && trim($user->role) == trim($role))    
-  {  $_SESSION['user'] = $user->name;
+if($user && password_verify($password, $user->getPassword()) && $user->getEmail() == $email && trim($user->getRole()) == trim($role))    
+  {     $_SESSION['user'] = $user->getName();
+        $_SESSION['user_id'] = $user->getId();  
 
 //     echo "Bienvenue". $user->name;
 //     // echo $user->name;
 // echo $user->email;
-$_SESSION['message'] = "bienvenu".$user->name;
+$_SESSION['message'] = "bienvenu".$user->getName();
     header('Location: ../public/dachboard.php');
     exit;
     

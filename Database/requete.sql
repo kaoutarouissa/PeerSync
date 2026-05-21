@@ -44,3 +44,15 @@ CREATE TABLE help_requests(
 );
 ALTER TABLE users
 ADD email VARCHAR(20);
+UPDATE users
+SET password = '$2a$12$mA2gMldsYGq84pxzeXCLxePTEYMVCoFKoqbY9sreJZVd6zidrRiPS'
+WHERE email = 'kawtar@gmail.com';
+INSERT INTO skills (title) VALUES
+('OOP PHP'),
+('JavaScript'),
+('HTML'),
+('CSS'),
+('SQL'),
+('Laravel'),
+('Git'),
+('React');
