@@ -28,7 +28,7 @@ if($user && password_verify($password, $user->getPassword()) && $user->getEmail(
 //     // echo $user->name;
 // echo $user->email;
 $_SESSION['message'] = "bienvenu".$user->getName();
-    header('Location: ../public/dachboard.php');
+    header('Location: ../public/dashboard.php');
     exit;
     
     
