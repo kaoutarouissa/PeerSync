@@ -63,3 +63,5 @@ WHERE status = 'ASSIGNE';
 ALTER TABLE help_requests DROP COLUMN status;
 ALTER TABLE help_requests
 ADD status ENUM('EN_ATTENTE', 'ASSIGNE', 'RESOLUE') DEFAULT 'EN_ATTENTE';
+ALTER TABLE help_requests
+ADD commentaire TEXT;
