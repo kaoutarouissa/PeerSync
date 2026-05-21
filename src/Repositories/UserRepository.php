@@ -9,7 +9,7 @@ class UserRepository {
         $sql="select * from users where email=?";
         $stm=$this->conn->prepare($sql);
         $stm->execute([$email]);
-        $usermail=$stm->fetch(PDO::FETCH_ASSOC);
+        $usermail=$stm->fetch(PDO::FETCH_OBJ);
         return $usermail;
 
     }
@@ -19,7 +19,7 @@ class UserRepository {
         $stm = $this->conn->prepare($sql);
         $stm->execute([$id]);
 
-        return $stm->fetch(PDO::FETCH_ASSOC);
+        return $stm->fetch(PDO::FETCH_OBJ);
     }
 }
 ?>

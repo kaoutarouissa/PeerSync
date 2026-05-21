@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // require_once "src/Entities/User.php";
 require_once __DIR__ . "/../src/Entities/User.php"; 
  ?>
@@ -12,12 +12,18 @@ require_once __DIR__ . "/../src/Entities/User.php";
 </head>
 
 <body class="bg-green-50 flex items-center justify-center min-h-screen">
-
   <div class="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
 
     <h2 class="text-2xl font-bold text-center text-green-600 mb-6">
        Bienvenue sur votre espace
     </h2>
+<?php
+if(isset($_SESSION['error'])){
+    echo $_SESSION['error'];
+    unset($_SESSION['error']);
+}
+?>
+    <!-- <h4><?php echo $_SESSION['error'];?></h4> -->
 
     <form action="../scripts/login_process.php" method="POST" class="space-y-4">
 
