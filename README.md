@@ -137,11 +137,16 @@ Tables principales :
 
 ### ERD
 
-Le diagramme de données est disponible dans [images/erd-simple.drawio](images/erd-simple.drawio).
+Le diagramme de données est disponible dans <img width="945" height="427" alt="image" src="https://github.com/user-attachments/assets/34e839b0-1f94-4da2-a94e-9f09e7c8919c" />
 
-## UML
+### DIAGRAMM CLASS
+<img width="646" height="530" alt="image" src="https://github.com/user-attachments/assets/7db892fe-95e6-4b37-8ded-e9a9bb985a77" />
 
-### Class Diagram
+### USE CASE DIAGRAMM
+<img width="803" height="495" alt="image" src="https://github.com/user-attachments/assets/736cc5fd-b4bc-4cf6-aa08-b4e393b80a03" />
+
+
+
 
 - `User` représente un compte utilisateur.
 - `HelpRequest` représente une demande d’aide avec son statut.
