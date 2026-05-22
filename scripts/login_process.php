@@ -23,6 +23,7 @@ $user = $userRepo->getUserByemail($email);
 if($user && password_verify($password, $user->getPassword()) && $user->getEmail() == $email && trim($user->getRole()) == trim($role))    
   {     $_SESSION['user'] = $user->getName();
         $_SESSION['user_id'] = $user->getId();  
+    $_SESSION['role'] = $user->getRole();
 
 //     echo "Bienvenue". $user->name;
 //     // echo $user->name;

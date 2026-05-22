@@ -53,7 +53,7 @@ if(isset($_SESSION['error'])){
           <option value=""> Choisir un rôle </option>
           <option value="admin">Admin</option>
           <option value="tuteur">Tuteur</option>
-          <option value="apprenant">Apprenant</option>
+          <option value="student">student</option>
 
         </select>
       </div>
